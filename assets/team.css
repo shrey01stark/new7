@@ -1,0 +1,391 @@
+html, body{
+    overflow-x:hidden;
+}
+
+.core-wrapper{
+    height:100%;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-bottom:3rem;
+    overflow:hidden;
+    position: relative;
+    
+}
+
+.core-wrap2{
+    display:flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+    height:100%;
+     
+}
+
+.core-wrapper h1{
+    color:white;
+    font-family: "Montserrat", sans-serif;
+    font-size: 2.5rem;
+    font-weight:bold;
+    text-align: center;
+}
+
+.circle,.circle-copy{
+    background-color: #539e1e95;
+    border-radius: 50% 50% 0% 50%;
+    height:20rem;
+    position:relative;
+    width:20rem;
+    object-fit: cover;
+    z-index:0;
+    overflow: hidden;
+}
+
+.circle-copy{
+    position: absolute;
+    overflow: visible;
+    left:-20rem;
+    z-index:-5;
+    background-color: transparent;
+
+}
+
+
+.circle img{
+    width:95%;
+    height:95%;
+    position: absolute;
+    bottom: 0;
+    right:0rem;
+    object-fit: cover;
+}
+
+.core-text {
+  min-width: 20rem; 
+  min-height: 5.4rem; 
+}
+
+
+.circle2{
+    border-radius: 50% 50% 50% 0%;
+    height:8rem;
+    width:8rem;
+    background-color: #539e1e57;
+    position:absolute;
+    top:-3rem;
+    right:-3rem;
+
+    overflow:visible;
+}
+
+.core-text h3{
+    font-size:1.3rem;
+    margin: 0;
+}
+
+.core-text p{
+    padding-bottom:1rem;
+    font-size:1.1rem;
+}
+
+.core-text{
+    display: flex;
+    flex-direction: column;
+    width:25%;
+    justify-content:end;
+    padding-left:2rem;
+    position: relative;
+}
+
+.circle3{
+    width:18rem;
+    height:18rem;
+    border-radius: 50%;
+    position:absolute;
+    bottom:-13rem;
+    left:20rem;
+    background-color: #83bc3d50;
+    z-index:-1;
+}
+
+.circle4{
+    position: absolute;
+    width:9rem;
+    height: 9rem;
+    right:3rem;
+    top:-10rem;
+    border-radius:50%;
+    background-color:#83bc3d25;
+}
+
+/* Navigation buttons */
+/* NAV BUTTONS */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 40px;
+  background: none;
+  border: none;
+  color: #7abd21;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.nav-btn.left { left: 20px; }
+.nav-btn.right { right: 20px; }
+
+/* HIDE BUTTONS ON MOBILE */
+@media (max-width: 768px) {
+  .nav-btn {
+    display: none;
+  }
+}
+
+/* FADE ANIMATION */
+.core-text.hide {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.core-text {
+  transition: all 0.3s ease;
+}
+
+/* DOTS */
+.dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 12px;
+}
+
+.phone-meet{
+    visibility: none;
+    overflow: hidden;
+    display:none;
+}
+
+.dots span {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid #7abd21;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.dots span::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  background: #7abd21;
+  border-radius: 50%;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.dots span.active::after {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+@media (max-width: 840px){
+
+    .core-wrapper{
+    overflow: visible; 
+  }
+
+  .phone-meet{
+    font-size:2rem;
+    margin-top:-2rem;
+    margin-bottom:2rem;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+    .circle2{
+        visibility:hidden;
+    }
+    .circle-copy{
+        left: 0;
+        bottom: 0;
+        transform: scale(0.8);
+        opacity: 0.4;
+    }
+
+    .circle3,
+    .circle4{
+        display: none;  
+    }
+    .circle {
+        width: 16rem;
+        height: 16rem;
+    }
+
+    
+
+
+    .core-wrapper{
+        height:100%;
+    }
+
+    .core-wrap2{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-right: 0;
+    }
+
+    .core-text p{
+        font-size:1rem;
+        width:100%;
+    }
+
+    .core-text{
+        width:80%;
+    }
+
+    .core-text h1{
+        font-size:2rem;
+    }
+
+    .circle-copy{
+        left:1rem;
+        bottom:9.5rem;
+       
+    }
+
+    .stagger-meet{
+      display: none;
+  }
+
+
+  .core-left{
+      flex: 0 0 100%;
+      width: 100%;
+  }
+
+  .core-wrap{
+      flex-direction: column;
+  }
+  
+}
+
+.core-wrap{
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-direction: row;
+}
+
+.core-left{
+    flex: 0 0 75%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stagger-meet{
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(90deg);
+    overflow: hidden;        
+}
+
+.stagger-inner h1{
+    opacity: 0;
+    transform: translateY(30px);  
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.stagger-meet.show .stagger-inner h1{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.core-wrapper{
+    width:100%;         
+}
+
+.dots{
+    width:100%;
+    padding-bottom: 2rem;          
+}
+
+.stagger-meet h1{
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    font-size:3rem;
+}
+
+.stagger-meet.show h1{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.stagger-inner h1:nth-child(1){ transition-delay: 0s; }
+.stagger-inner h1:nth-child(2){ transition-delay: 0.5s; }
+.stagger-inner h1:nth-child(3){ transition-delay: 1s; }
+
+.core-wrap{
+    position: relative;        /* anchor for absolute child */
+    overflow-x: hidden;        /* kill rotation overflow */
+}
+
+
+
+
+@media (max-width: 840px){
+
+  /* Kill stagger completely */
+  .stagger-meet{
+      display: none !important;
+      visibility: hidden;
+      width: 0;
+      height: 0;
+      overflow: hidden;
+  }
+
+  /* Left takes full width */
+  .core-left{
+      flex: 0 0 100%;
+      width: 100%;
+  }
+
+  /* Layout becomes single column */
+  .core-wrap{
+      flex-direction: column;
+  }
+
+  /* Extra safety: prevent horizontal overflow */
+  .home4,
+  .core-wrap{
+      overflow-x: hidden;
+  }
+
+}
+
+.stagger-meet{
+    position: absolute;        /* 🔥 REMOVE FROM FLEX FLOW */
+    right: -3rem;              /* pull it slightly outside visually */
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+
+    width: auto;
+    height: auto;
+
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10rem;
+    pointer-events: none;      /* optional: makes it decorative */
+    }

@@ -1,0 +1,232 @@
+.services-text{
+    display:flex;
+    flex-direction: column;
+    width:80vw;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.services-text h3{
+    font-weight: 500;
+    padding: 0.1rem 1rem;
+    border: 2px solid olivedrab;
+    border-radius: 1rem;
+    color:olivedrab;
+    
+}
+
+.services-text h2{
+    font-weight:400;
+    font-size:1.1rem;
+    padding-bottom:2rem;
+    margin-top:0.3rem;
+}
+
+.services-text h1{
+    margin:0;
+    line-height: 2.8rem;
+}
+
+.service-grid{
+    display: flex;
+    border:none;
+    width:80vw;
+    position: relative;
+    flex-direction: row;
+    gap:2rem;
+}
+
+.service-grid img{
+    width:40%;
+    height:auto;
+    object-fit: cover;
+    border-radius: 0.2rem;
+}
+
+.service-grid-text h1{
+    
+    padding-top:2rem;
+    
+}
+
+.num{
+    display:flex;
+    position: absolute;
+    top:1rem;
+    left:1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    height:3rem;
+    width:3rem;
+    justify-content: center;
+    align-items: center;
+    background-color:black;
+}
+
+.service-grid.reverse .num{
+    left: auto;
+    right: 1rem;
+}
+
+.tags{
+    display: flex;
+    gap:1rem;
+    padding-top:0.5rem;
+    
+}
+
+.tag-item{
+    border: 2px solid white;
+    border-radius: 0.5rem;
+    padding: 0.4rem 1rem;
+}
+
+
+@media (max-width:768px){
+    .tags{
+        flex-direction: column;
+        
+
+    }
+
+    .services-text h1{
+        font-size:1.5rem;
+        text-align:left;
+        line-height: 1.7rem;
+    }
+
+    .services-text h2{
+        text-align: left;
+        margin-top: 1rem;
+    }
+    .home3{
+        padding:0;
+    }
+
+    .tag-item{
+        width:fit-content;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(11px);
+  -webkit-backdrop-filter: blur(11px);
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 0 20px 10px rgba(255, 255, 255, 0.005);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
+}
+
+.glass-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.8),
+    transparent,
+    rgba(255, 255, 255, 0.3)
+  );
+}
+
+.services-container{
+    display: flex;
+    flex-direction: column;
+    gap:4rem;
+    align-items: center;
+}
+
+/* alternate layout */
+.service-grid.reverse{
+    flex-direction: row-reverse;
+}
+
+
+@media (max-width: 768px){
+
+  .service-grid{
+      flex-direction: column;
+      width:90vw;
+      padding: 0 1rem;
+  }
+
+  .service-grid.reverse{
+      flex-direction: column;   /* no reverse on mobile */
+  }
+
+  .service-grid img{
+      width:100%;
+  }
+
+  .service-grid-text{
+      width:100%;
+      padding-bottom:2rem;
+  }
+  .grad-line3{
+    width:100%;
+    padding:0.5px;
+    position:absolute;
+    bottom:1rem;
+    background:linear-gradient(to right, black, white, black);
+}
+
+}
+
+
+.service-grid{
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.service-grid.show{
+    opacity: 1;
+    transform: translateY(0);
+}
+

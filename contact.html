@@ -1,0 +1,327 @@
+<html lang="en">
+<head>
+  	<meta charset="UTF-8">
+  	<meta 
+    name="viewport" 
+    content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+ 	 <title>180 Degrees Consulting ARSD | Consulting Society of Delhi University</title>
+
+	<meta name="theme-color" content="#000000">
+
+	<meta name="author" content="180 Degrees Consulting ARSD, by Shreyansh & Avish">
+	<meta name="publisher" content="Atma Ram Sanatan Dharma College, Delhi University">
+
+	<meta name="robots" content="index, follow">
+	<meta name="googlebot" content="index, follow">
+
+	<meta name="keywords" content="180 Degrees Consulting, ARSD, Delhi University consulting society, student consulting, strategy society DU, analytics, case competitions, management consulting India">
+
+	<meta property="og:site_name" content="180 Degrees Consulting ARSD">
+	<meta property="og:locale" content="en_IN">
+
+	<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+	<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
+	<meta name="color-scheme" content="light dark">
+	<meta name="format-detection" content="telephone=no">
+
+	<meta
+		property="og:title"
+		content="180 Degrees Consulting ARSD | Consulting Society of Delhi University" />
+	<meta
+		name="twitter:title"
+		content="180 Degrees Consulting ARSD | Consulting Society of Delhi University" />
+
+	<meta name="twitter:card" content="summary" />
+	<meta property="og:type" content="website" />
+
+	<meta
+		property="og:image"
+		content="https://www.180dcarsd.org/assets/img/logo.png" /> <!--link to a banner img later -->
+	<meta
+		name="twitter:image"
+		content="https://www.180dcarsd.org/assets/img/logo.png" /><!--link to a banner img later -->
+
+	<link
+		rel="icon"
+		type="image/x-icon"
+		href="assets/icons/icon.ico" />
+
+
+
+    <meta name="google-site-verification" content="N5AfIiJETCj7sN1c7gYKexCpmORbVSapHLPZYnllFWo" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="./assets/footer.css">
+	<link rel="stylesheet" href="./style.css">
+
+
+	<link rel="canonical" href="https://www.180dcarsd.org/" />
+
+
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+
+
+</head>
+<body>
+
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+
+  const form = document.getElementById("form");
+  const result = document.getElementById("result");
+
+  if (!form) return;
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    result.style.display = "block";
+    result.textContent = "Submitting...";
+    result.style.color = "#aaaaaa";
+
+    const formData = new FormData(form);
+
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+
+      if (data.success) {
+        result.textContent = "Message sent successfully!";
+        result.style.color = "#83bc3d";
+        form.reset();
+      } else {
+        result.textContent = "Something went wrong. Please try again.";
+        result.style.color = "red";
+      }
+
+      setTimeout(() => {
+        result.style.display = "none";
+      }, 4000);
+
+    })
+    .catch(() => {
+      result.textContent = "Network error.";
+      result.style.color = "red";
+    });
+
+  });
+
+});
+</script>
+
+    <style>
+
+        input[type="text"] {
+  color:white;
+  font-size: 1.5rem; 
+  font-family: "Montserrat", sans-serif; 
+  font-weight: 500;
+  padding: 10px;
+}
+
+        /* CONTACT SECTION */
+.contact-section {
+  min-height: 100vh;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 1.5rem;
+}
+
+/* CARD */
+.contact-card {
+  background: #101010;
+  padding: 2.5rem;
+  border-radius: 14px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  max-width: 500px;
+  width: 100%;
+}
+
+/* HEADER */
+.contact-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.contact-header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.contact-header p {
+  color: #aaaaaa;
+  font-size: 0.9rem;
+}
+
+/* FORM GROUP */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+  color: #cccccc;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.9rem;
+  background: #1b1b1b;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 0.9rem;
+  transition: 0.3s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #666666;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #83bc3d;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(131, 188, 61, 0.2);
+}
+
+/* BUTTON */
+.contact-btn {
+  width: 100%;
+  padding: 1rem;
+  background: #83bc3d;
+  border: none;
+  border-radius: 8px;
+  color: black;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.contact-btn:hover {
+  transform: translateY(-2px);
+  background: #6fa52e;
+}
+
+/* RESULT TEXT */
+.form-result {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #83bc3d;
+}
+
+.contact-card:hover {
+  box-shadow: 0 0 30px rgba(131, 188, 61, 0.2);
+}
+
+body{
+    font-family:"Montserrat", sans-serif;
+    margin: 0;
+}
+.lottie{
+ width: 70%; 
+ height:70%;
+}
+
+@media (max-width:900px){
+    .contact-section{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .lottie{
+ width: 100%; 
+ height:100%;
+}
+}
+
+
+    </style>
+
+    <!-- 
+    =======================================================================
+
+    This is a working contact form. To receive email, 
+    Replace YOUR_ACCESS_KEY_HERE with your actual Access Key.
+
+    Create Access Key here 👉 https://web3forms.com/
+
+    =======================================================================
+ -->
+
+<section class="contact-section">
+
+    
+    <div class="lottie-wrapper">
+  <lottie-player 
+    class="lottie"
+    src="./assets/img/Email.json"
+    background="transparent"
+    speed="1"
+    
+    autoplay>
+  </lottie-player>
+</div>
+
+  <div class="contact-card">
+
+    <div class="contact-header">
+      <h1>Partner With Us</h1>
+      <p>Schedule a chat to discuss your business goals.</p>
+    </div>
+
+    <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+      <input type="hidden" name="access_key" value="1743c364-0f11-4e8e-8731-029bfb7025c2">
+      <input type="hidden" name="subject" value="New Submission from 180DC ARSD">
+      <input type="checkbox" name="botcheck" style="display:none;">
+
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" name="name" placeholder="John Doe" required>
+      </div>
+
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" name="email" placeholder="you@company.com" required>
+      </div>
+
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="text" name="phone" placeholder="+91 9876543210" required>
+      </div>
+
+      <div class="form-group">
+        <label>Your Message</label>
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      </div>
+
+      <button type="submit" class="contact-btn">
+        Send Message
+      </button>
+
+      <input type="hidden" name="replyto" value="">
+
+      <p class="form-result" id="result"></p>
+    </form>
+
+  </div>
+</section>
+
+</body>
+</html>

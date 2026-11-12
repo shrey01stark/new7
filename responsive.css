@@ -1,0 +1,255 @@
+@media (max-width: 600px) {
+
+    .text{
+        top:15%;
+        width:100%;
+    }
+
+    .text h2{
+        font-size:1.5rem;
+    }
+
+    .text h1{
+        font-size: 2.5rem;
+        margin-top: 3rem;
+    }
+}
+
+.mob-header{
+  visibility: hidden;
+  display:none;
+  pointer-events: none;
+}
+
+@media (max-width: 1110px) {
+
+  .nav{
+    visibility: hidden;
+    display:none;
+    pointer-events: none;
+  }
+
+  .logo{
+    width: 30%;
+    height: auto;
+    object-fit: cover;
+}  
+
+  .feh-shiny-button{
+    padding: 0.6rem 1rem;
+  }
+
+  .mob-header{
+    display: block;
+    visibility: visible;
+    pointer-events: all;
+    width:8%;
+    height:30%;
+    position: absolute;
+    right:0;
+    bottom:30%;
+    z-index:99999;
+  }
+
+  .mob-ul { 
+    list-style: none;
+    margin: 0;
+    padding: 0; 
+    margin-right: auto;
+    background: rgba(39, 183, 53, 0.082);
+    backdrop-filter: blur(8px);
+    box-shadow: 
+        0 8px 32px rgba(75, 149, 69, 0.1),
+        inset 0 1px 0 rgba(51, 230, 31, 0.5),
+        inset 0 -1px 0 rgba(6, 171, 9, 0.416),
+        inset 0 0 0px 0px rgba(5, 212, 29, 0.081);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: .4rem 2rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 50px 0 rgba(olivedrab, .25);
+   
+  }
+
+  .mob-li + .mob-li {
+    margin-top: .75rem;
+  }
+
+  .mob-a {
+    color: #FFF; 
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 8px;
+    position: relative;
+  }
+
+  /* icon size */
+  .mob-a i {
+    font-size: 1.4rem;
+  }
+
+  /* hover effect */
+  .mob-a:hover,
+  .mob-a:focus,
+  .mob-a.active {
+    backdrop-filter:blur(290px);
+    outline: 0;
+  }
+
+  /* tooltip span */
+  .mob-span {
+    position: absolute;
+    background-color: olivedrab;
+    white-space: nowrap;
+    padding: .5rem 1rem;
+    border-radius: 6px;
+    right: calc(100% + 1.5rem);
+    transform-origin: center left;
+    transform: scale(0);
+    opacity: 0;
+    transition: .15s ease;
+  }
+
+  .mob-li h2{
+    font-weight: 400;
+  }
+
+
+  /* show tooltip on hover */
+  .mob-a:hover .mob-span {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  @keyframes scale {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+}
+
+@media (max-width: 1110px) {
+  /* --- HAMBURGER BUTTON STYLING --- */
+  .hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 10000; /* Stays above the menu */
+    padding: 10px;
+  }
+
+  .bar {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 2px;
+  }
+
+  /* Hamburger to Cross Morph */
+  .hamburger-menu.active .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+  .hamburger-menu.active .bar:nth-child(2) { opacity: 0; }
+  .hamburger-menu.active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
+  /* --- MODIFIED MOB-HEADER --- */
+  .mob-header {
+    display: flex !important; /* Overriding your display:none */
+    visibility: visible !important;
+    position: fixed; /* Fixed so it covers screen */
+    top: 10%;
+    right: 0;
+    width: 100%;
+    height: 0; /* START AT 0 */
+    backdrop-filter: blur(15px);
+    overflow: hidden;
+    transition: height 0.4s ease-in-out; /* YOUR 1.5s ANIMATION */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+  }
+
+  /* When JS adds this class */
+  .mob-header.open {
+    height: 90%; 
+    pointer-events: all;
+  }
+
+  .mob-header div{
+    display: flex;
+    justify-content: start;
+    width:100%;
+    gap:2rem;
+    align-items: center;
+    white-space: nowrap;
+    
+  }
+  
+  
+  .mob-ul {
+    background: none !important; /* Removing the box look for full screen */
+    box-shadow: none !important;
+  }
+}
+
+/* Hide button on desktop */
+@media (min-width: 1111px) {
+  .hamburger-menu { display: none; }
+}
+
+@media (max-width: 800px){
+
+
+    .home {
+        /* Reduce the extra height for the landing section */
+        height: 100vh; 
+        position: relative; /* If you don't need it to stick on mobile */
+    }
+
+    .text {
+        top: 10%; /* Pull the text up slightly */
+        padding: 2rem; /* Reduce padding so content fits better */
+    }
+
+    .text h2 {
+        white-space: normal; /* Allow text to wrap so it doesn't break the layout */
+    }
+
+
+  .logo{
+    visibility: hidden;
+    display: hidden;
+  }
+
+  header{
+    padding: 0 2rem;
+  }
+
+  .text p{
+    font-size: 0.9rem;
+    line-height: 1.3rem;
+  }
+
+  .text button{
+    padding: 0.5rem 1.5rem;
+  }
+
+}
+
+@media (min-width:1000px){
+.text{
+  margin-top:-8rem !important;
+}
+}
+

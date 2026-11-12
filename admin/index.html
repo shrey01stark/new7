@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#080a08">
+  <title>180DC ARSD | Content Manager</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./admin.css">
+  <script defer src="./admin.js"></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="../index.html"><span class="mark">180</span><span>DEGREES CONSULTING <small>ARSD · CONTENT STUDIO</small></span></a>
+      <div class="top-actions"><a href="../index.html" target="_blank" rel="noopener">View website ↗</a><span class="user-chip"><img id="userAvatar" alt=""/><small id="userLabel"></small></span><button id="signOutBtn" class="quiet hidden">Sign out</button></div>
+    </header>
+
+
+    <section id="loginView" class="login-layout">
+      <div class="intro"><span class="eyebrow">INTERNAL CONTENT MANAGEMENT</span><h1>Your website.<br><em>Your control.</em></h1><p>Publish reports, events, partnerships, team updates and initiatives without editing code.</p><div class="secure-note"> <span></span> Restricted access · 180DC ARSD admins only</div></div>
+      <div class="panel login-panel">
+        <span class="eyebrow">ADMIN ACCESS</span><h2>Sign in</h2>
+        <p>Use your authorised GitHub account to manage the 180DC ARSD website.</p>
+        <button id="githubLoginBtn" class="primary" type="button"><span>Continue with GitHub</span> <span>→</span></button>
+        <p id="loginMessage" class="message" aria-live="polite"></p>
+        <small>Access is restricted to GitHub usernames approved by the website owner.</small>
+      </div>
+    </section>
+
+    <section id="dashboardView" class="dashboard hidden">
+      <div class="welcome"><div><span class="eyebrow">CONTENT OPERATIONS</span><h1>Manage the <em>story.</em></h1><p>Create, update and publish website content. Drafts stay in this browser until published.</p></div><div class="live-pill"><span></span> GitHub connected</div></div>
+      <div class="workspace">
+        <aside class="sidebar"><span class="side-label">LIBRARY</span><nav id="categoryNav">
+          <button class="nav-item active" data-category="publications"><span>↗</span> Publications & R&D</button>
+          <button class="nav-item" data-category="events"><span>◷</span> Events & galleries</button>
+          <button class="nav-item" data-category="clients"><span>◇</span> Clients & partners</button>
+          <button class="nav-item" data-category="team"><span>◎</span> Team members</button>
+          <button class="nav-item" data-category="initiatives"><span>✳</span> Initiatives</button>
+          <button class="nav-item" data-category="site-updates"><span>＋</span> Site updates</button>
+        </nav><div class="side-foot">180DC ARSD<br><small>Content Manager v1.0</small></div></aside>
+        <section class="content-area">
+          <div class="content-head"><div><span class="eyebrow" id="sectionEyebrow">LIBRARY / PUBLICATIONS</span><h2 id="sectionTitle">Publications & R&D</h2><p id="sectionDescription">Research reports, frameworks and industry insights.</p></div><button id="newItemBtn" class="primary">＋ Add new</button></div>
+          <div class="filters"><div class="searchbox">⌕ <input id="searchInput" type="search" placeholder="Search content..."></div><select id="statusFilter"><option value="all">All content</option><option value="published">Published</option><option value="draft">Drafts</option></select></div>
+          <div id="itemsList" class="items-list"><div class="empty-state">Loading your content…</div></div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <div id="editorModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="editorTitle">
+    <div class="modal-card"><div class="modal-head"><div><span class="eyebrow">CONTENT EDITOR</span><h2 id="editorTitle">Add content</h2></div><button id="closeModal" class="close" aria-label="Close">×</button></div>
+      <form id="contentForm">
+        <input id="itemId" type="hidden">
+        <div class="form-grid"><label class="span-2">Title *<input id="itemTitle" maxlength="140" required placeholder="Give this content a clear title"></label>
+          <label class="span-2">Description<textarea id="itemDescription" rows="4" maxlength="1200" placeholder="A short description shown on the website"></textarea></label>
+          <label>Date<input id="itemDate" type="date"></label><label>Display order<input id="itemOrder" type="number" value="0"></label>
+          <label class="span-2">External link / report URL<input id="itemLink" type="url" placeholder="https://..."></label>
+          <label class="span-2">Images / PDF files<input id="itemFiles" type="file" multiple accept="image/png,image/jpeg,image/webp,application/pdf"><small>Up to 3 MB per file. Files are committed to this GitHub repository.</small></label>
+          <div id="existingMedia" class="span-2 media-preview"></div>
+          <label class="toggle-label span-2"><input id="itemPublished" type="checkbox"> <span><strong>Publish this content</strong><small>Published content becomes visible after the Vercel deployment completes.</small></span></label>
+        </div>
+        <div class="modal-actions"><button type="button" id="cancelEdit" class="quiet">Cancel</button><button type="submit" id="saveItemBtn" class="primary">Save content</button></div>
+        <p id="editorMessage" class="message" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
